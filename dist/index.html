@@ -780,7 +780,7 @@
       projectGrid.innerHTML = projects
         .map(
           (p) =>
-            `<article class="project"><div class="preview"><img loading="lazy" src="previews/${p[4].split("/").pop()}.png?v=20261009" alt="${p[0]} live preview"></div><div class="project-body"><h3>${p[0]}</h3><p>${p[1]}</p><div class="tags">${p[2].map((t) => '<span class="tag">' + t + "</span>").join("")}</div><div class="project-links"><a href="${p[3]}" target="_blank" rel="noreferrer">Live project</a><a href="${p[4]}" target="_blank" rel="noreferrer">Source code</a></div></div></article>`,
+            `<article class="project"><div class="preview"><img loading="lazy" src="previews/${p[4].split("/").pop()}.png?v=20261009-2" alt="${p[0]} live preview"></div><div class="project-body"><h3>${p[0]}</h3><p>${p[1]}</p><div class="tags">${p[2].map((t) => '<span class="tag">' + t + "</span>").join("")}</div><div class="project-links"><a href="${p[3]}" target="_blank" rel="noreferrer">Live project</a><a href="${p[4]}" target="_blank" rel="noreferrer">Source code</a></div></div></article>`,
         )
         .join("");
       const button = document.querySelector("#theme");
