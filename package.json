@@ -1,0 +1,11 @@
+{
+  "name": "tech-buzzs-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/validate.mjs",
+    "sync-demos": "node scripts/sync-demos.mjs"
+  }
+}

@@ -515,13 +515,13 @@
         }
       }
     </style>
-  </head>
+  <script>try{const p=localStorage.getItem('techbuzzs-theme')||'system';document.documentElement.dataset.theme=p==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):p}catch{document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'}</script><link rel="stylesheet" href="home-enhancements.css"></head>
   <body>
     <main class="page">
       <nav>
         <a class="brand" href="#about">TECH <i>BUZZS</i></a>
         <div class="navlinks">
-          <a href="#about">About</a><a href="#skills">Skills</a
+          <a href="#about">About</a><a href="#tools">Try tools</a><a href="#skills">Skills</a
           ><a href="#projects">Projects</a><a href="#contact">Contact</a>
         </div>
         <a class="hello" href="mailto:techbuzzs@gmail.com"
@@ -539,11 +539,12 @@
             people can understand and use.
           </p>
           <div class="cta">
-            <a class="primary" href="#projects">Explore projects</a
-            ><a class="secondary" href="mailto:techbuzzs@gmail.com"
-              >Start a conversation</a
+            <a class="primary" href="#tools">Try something useful ↗</a
+            ><a class="secondary" href="#projects"
+              >Explore the projects</a
             >
           </div>
+          <div class="hero-proof"><span><b>18</b>Live projects</span><span><b>6</b>Useful browser tools</span><span><b>3</b>Original landing pages</span></div>
         </div>
         <div class="portrait" aria-label="Animated Tech Buzzs studio mark">
           <div class="halo"></div>
@@ -582,26 +583,24 @@
           </article>
         </div>
       </section>
-      <section class="content" id="skills">
+      <section class="content" id="tools"><div class="section-head"><div><div class="section-label">A small collection of useful things</div><h2 class="section-title">Don't just browse.<br>Try something.</h2><p class="section-copy">Crop a photo. Frame a code snippet. Find your next color palette. Real tools, ready to use right here.</p></div><p class="section-note">Start with a sample or bring your own file. Downloads work inside the preview, and your files stay on your device.</p></div><div class="tool-grid" id="toolGrid"></div><div class="inline-palette"><div><h3>A little color inspiration</h3><p id="paletteStatus" role="status">Click a color to copy it.</p></div><div id="inlineSwatches" class="inline-swatches"></div><div class="tool-actions" style="margin:0"><button class="mini-button" id="shuffleInline">Shuffle ↻</button><button class="mini-button" id="fullPalette">Open Palette Lab ↗</button></div></div></section><section class="content" id="skills">
         <div class="section-label">Technical capability</div>
         <h2 class="section-title">Polyglot by design.</h2>
         <p class="section-copy">
           Deep enough for systems work, broad enough to own the complete product
           surface.
         </p>
-        <div class="skills" id="skillGrid"></div>
+        <div class="skills-toolbar" aria-label="Skill categories"><button class="filter-button active" data-skill="all" aria-pressed="true">All capabilities</button><button class="filter-button" data-skill="Frontend" aria-pressed="false">Frontend</button><button class="filter-button" data-skill="Backend" aria-pressed="false">Backend</button><button class="filter-button" data-skill="Data & infrastructure" aria-pressed="false">Data & infrastructure</button><button class="filter-button" data-skill="Quality & tooling" aria-pressed="false">Quality & tooling</button><button class="filter-button" data-skill="AI & systems" aria-pressed="false">AI & systems</button></div><div class="skills" id="skillGrid"></div>
       </section>
       <section class="content" id="projects">
         <div class="section-label">Selected builds & product demos</div>
         <h2 class="section-title">See the software<br />in motion.</h2>
         <p class="section-copy">
-          Every project has a live, visual preview and inspectable source. The
-          newer builds use seeded data and browser-side simulation so they
-          remain fast and dependable.
+          Working utilities, interactive systems, original landing pages and playful experiments. Preview a build here, open the live website or explore its source.
         </p>
-        <div class="projects" id="projectGrid"></div>
+        <div class="filter-row" aria-label="Project categories"><button class="filter-button active" data-filter="all" aria-pressed="true">All projects</button><button class="filter-button" data-filter="utility" aria-pressed="false">Useful tools · 6</button><button class="filter-button" data-filter="landing" aria-pressed="false">Landing pages · 3</button><button class="filter-button" data-filter="systems" aria-pressed="false">Systems · 8</button><button class="filter-button" data-filter="play" aria-pressed="false">Play · 1</button><input class="search" id="projectSearch" type="search" placeholder="Find a project or technology…" aria-label="Search projects"></div><p id="projectCount" class="project-count" role="status"></p><div class="projects" id="projectGrid"></div><button id="moreProjects" class="more-projects">Explore all projects ↓</button>
       </section>
-      <section class="contact-block" id="contact">
+      <section id="play" class="play-section"><div class="play-layout"><div class="play-copy"><div class="section-label">A tiny studio break</div><h2>A little play.<br>A fresh perspective.</h2><p>Twenty seconds, just for fun. Pop a few bubbles or help a tiny dino clear the cacti. Your best score stays on this device.</p><div class="game-tabs" aria-label="Choose a game"><button class="active" data-game="bubbles" aria-pressed="true">Bubble Burst</button><button data-game="dino" aria-pressed="false">Tap Dino</button></div></div><div class="game-shell"><div class="game-top"><span>Score <b id="gameScore">0</b></span><span>Best <b id="gameBest">0</b></span><span id="gameTime">20s</span></div><div id="bubbleArena" class="game-arena"><div id="bubbleIdle" class="game-idle"><div><strong>A little pop of joy.</strong>Press Start, then tap the bubbles.</div></div></div><canvas id="dinoCanvas" width="560" height="250" tabindex="0" aria-label="Tap Dino game. Use the Jump button, or focus here and press Space or Arrow Up to jump." hidden></canvas><div class="game-bottom"><p>Small breaks make room for good ideas.</p><button id="gameJump" hidden>Jump ↑</button><button id="gameStart">Start</button></div><p id="gameStatus" class="game-status" role="status">A 20-second break. No account, just a few bubbles.</p></div></div></section><section class="contact-block" id="contact">
         <div class="section-label">Work with Tech Buzzs</div>
         <h2>Have a product problem worth solving?</h2>
         <p>
@@ -647,163 +646,6 @@
         ☾
       </button>
     </div>
-    <script>
-      const skills = [
-        [
-          "react/react-original.svg",
-          "React & Next.js",
-          "Redux · Zustand · React Native",
-        ],
-        [
-          "typescript/typescript-original.svg",
-          "JavaScript & TypeScript",
-          "HTML · CSS · Sass · Tailwind",
-        ],
-        [
-          "nodejs/nodejs-original.svg",
-          "Node.js services",
-          "Express · NestJS · Fastify",
-        ],
-        ["java/java-original.svg", "Java platform", "Spring · Apache Ignite"],
-        ["python/python-original.svg", "Python", "APIs · automation · data"],
-        ["dot-net/dot-net-original.svg", ".NET", "C# · service architecture"],
-        ["go/go-original.svg", "Go", "Concurrent backend services"],
-        [
-          "postgresql/postgresql-original.svg",
-          "Data systems",
-          "Postgres · MySQL · MongoDB",
-        ],
-        [
-          "redis/redis-original.svg",
-          "Streaming & cache",
-          "Redis · Kafka · RabbitMQ",
-        ],
-        [
-          "kubernetes/kubernetes-plain.svg",
-          "Cloud delivery",
-          "Kubernetes · CI/CD · serverless",
-        ],
-        [
-          "amazonwebservices/amazonwebservices-plain-wordmark.svg",
-          "Cloud platforms",
-          "AWS · Azure · GCP · S3",
-        ],
-        [
-          "graphql/graphql-plain.svg",
-          "API engineering",
-          "REST · GraphQL · OAuth · JWT",
-        ],
-        [
-          "vitejs/vitejs-original.svg",
-          "Frontend tooling",
-          "Vite · Framer Motion · SEO",
-        ],
-        [
-          "jest/jest-plain.svg",
-          "Quality engineering",
-          "Jest · Cypress · Artillery",
-        ],
-        ["", "AI & GenAI", "LLMs · RAG · agents · Claude"],
-        ["", "Distributed computing", "Queues · resilience · observability"],
-      ];
-      skillGrid.innerHTML = skills
-        .map(
-          (s) =>
-            `<div class="skill">${s[0] ? `<img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${s[0]}" alt="">` : '<div class="icon">AI</div>'}<div><b>${s[1]}</b><span>${s[2]}</span></div></div>`,
-        )
-        .join("");
-      const projects = [
-        [
-          "Retro Arcade",
-          "A playful, nostalgic arcade experience.",
-          ["React", "Interactive UI"],
-          "https://retro-arcade-ashy.vercel.app/",
-          "https://github.com/techbuzzs/retro-arcade",
-        ],
-        [
-          "Webhook Playground",
-          "Inspect and understand webhook delivery workflows.",
-          ["Full stack", "API tooling"],
-          "https://webhook-playground-aa8apic9x-techbuzzs.vercel.app/",
-          "https://github.com/techbuzzs/webhook-playground",
-        ],
-        [
-          "Agent Mission Control",
-          "Coordinate agent work from a focused command surface.",
-          ["AI agents", "Systems UI"],
-          "https://agent-mission-control-five.vercel.app/",
-          "https://github.com/techbuzzs/agent-mission-control",
-        ],
-        [
-          "Realtime Chat Studio",
-          "A live cross-tab chat interface with a Socket.IO-ready transport boundary.",
-          ["Realtime UI", "BroadcastChannel"],
-          "https://realtime-chat-studio.vercel.app/",
-          "https://github.com/techbuzzs/realtime-chat-studio",
-        ],
-        [
-          "Architecture Decision Lab",
-          "Explore architectural trade-offs through live recommendations.",
-          ["System design", "Visualizer"],
-          "https://architecture-decision-lab.vercel.app/",
-          "https://github.com/techbuzzs/architecture-decision-lab",
-        ],
-        [
-          "Distributed Job Orchestrator",
-          "Visualize queues, workers, retries, and capacity.",
-          ["Distributed systems", "Simulation"],
-          "https://distributed-job-orchestrator-one.vercel.app/",
-          "https://github.com/techbuzzs/distributed-job-orchestrator",
-        ],
-        [
-          "API Reliability Console",
-          "Observe request health and replay failed deliveries.",
-          ["Observability", "API UX"],
-          "https://api-reliability-console.vercel.app/",
-          "https://github.com/techbuzzs/api-reliability-console",
-        ],
-        [
-          "Multi-tenant SaaS Starter",
-          "Explore tenants, roles, membership, and audit context.",
-          ["SaaS", "Admin UI"],
-          "https://multi-tenant-saas-starter-phi.vercel.app/",
-          "https://github.com/techbuzzs/multi-tenant-saas-starter",
-        ],
-        [
-          "Systems Signal",
-          "A visual briefing for releases, decisions, and incidents.",
-          ["Editorial UI", "Reliability"],
-          "https://systems-signal.vercel.app/",
-          "https://github.com/techbuzzs/systems-signal",
-        ],
-      ];
-      projectGrid.innerHTML = projects
-        .map(
-          (p) =>
-            `<article class="project"><div class="preview"><img loading="lazy" src="previews/${p[4].split("/").pop()}.png?v=20261009-2" alt="${p[0]} live preview"></div><div class="project-body"><h3>${p[0]}</h3><p>${p[1]}</p><div class="tags">${p[2].map((t) => '<span class="tag">' + t + "</span>").join("")}</div><div class="project-links"><a href="${p[3]}" target="_blank" rel="noreferrer">Live project</a><a href="${p[4]}" target="_blank" rel="noreferrer">Source code</a></div></div></article>`,
-        )
-        .join("");
-      const button = document.querySelector("#theme");
-      const saved = localStorage.getItem("techbuzzs-theme");
-      if (saved === "dark") document.documentElement.dataset.theme = "dark";
-      function sync() {
-        const dark = document.documentElement.dataset.theme === "dark";
-        button.textContent = dark ? "☀" : "☾";
-        button.setAttribute(
-          "aria-label",
-          dark ? "Switch to light theme" : "Switch to dark theme",
-        );
-      }
-      button.onclick = () => {
-        document.documentElement.dataset.theme =
-          document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-        localStorage.setItem(
-          "techbuzzs-theme",
-          document.documentElement.dataset.theme,
-        );
-        sync();
-      };
-      sync();
-    </script>
+<dialog id="previewDialog" class="preview-dialog"><div class="dialog-head"><div><h2 id="dialogTitle">Project preview</h2><p id="dialogSubtitle"></p></div><button id="closePreview" class="dialog-close" aria-label="Close project preview">×</button></div><div id="previewControls" class="preview-controls"><button class="active" data-device="desktop">Desktop</button><button data-device="mobile">Mobile</button><select id="previewTheme" aria-label="Preview color theme"><option value="inherit">Follow homepage theme</option><option value="light">Light preview</option><option value="dark">Dark preview</option></select><a id="dialogLive" href="#" target="_blank" rel="noreferrer">Full website ↗</a><a id="dialogSource" href="#" target="_blank" rel="noreferrer">Source code ↗</a></div><div class="frame-shell"><iframe id="demoFrame" title="Interactive project preview" src="about:blank" allow="clipboard-write" sandbox="allow-scripts allow-same-origin allow-downloads allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe></div><div id="detailView" class="detail-content" hidden></div></dialog><script type="module" src="home.js"></script>
   </body>
 </html>

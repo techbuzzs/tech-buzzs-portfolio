@@ -1,0 +1,1 @@
+export * as pdfjs from 'pdfjs-dist';export { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
